@@ -11,6 +11,7 @@ Lint  (Clang Tidy)   | [![Build Status](https://github.com/tesseract-robotics/te
 | :---           | :---:   |
 | ROS Foxy       | &check; |
 | ROS Humble     | &check; |
+| ROS Jazzy      | &check; |
 
 [![Github Issues](https://img.shields.io/github/issues/ros-industrial-consortium/tesseract_ros.svg)](http://github.com/ros-industrial-consortium/tesseract_ros/issues)
 
@@ -45,16 +46,25 @@ The second is the environment monitor, which is the main environment which facil
 This package contains a planning server supporting asynchronous execution of multiple planning requests.
 
 ## Build
-- Create a `colcon` workspace and clone this repository into its `src` directory
-
-- Add the dependencies
+- Create a `colcon` workspace and clone this repository into its `src` directory. Example:
     ```bash
-    cd <colcon_ws>
-    vcs import < src/tesseract_ros2/dependencies.repos
+    export TESSERACT_WS="tesseract_ws"
+    cd ~
+    mkdir -p ${TESSERACT_WS}/src && cd ${TESSERACT_WS}/src
+    git clone git@github.com:jdham-iastate/tesseract_ros2.git
+    ```
+
+- Add the dependencies. Example:
+    ```bash
+    cd ~/${TESSERACT_WS}
+    vcs import --shallow --debug src < src/tesseract_ros2/dependencies.repos
+    vcs import --shallow --debug src < src/tesseract/dependencies.repos
     rosdep install --from-paths src -iry
     ```
 
 - Build
     ```bash
+    cd ~/${TESSERACT_WS}
+    source /opt/ros/jazzy/setup.bash
     colcon build --symlink-install --cmake-args -DTESSERACT_BUILD_FCL=OFF -DBUILD_RENDERING=OFF -DBUILD_STUDIO=OFF
     ```
