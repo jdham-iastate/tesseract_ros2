@@ -7,22 +7,27 @@ repositories:
     type: git
     url: https://github.com/tesseract-robotics/boost_plugin_loader.git
     version: 0.4.2
+  # JDH - commenting out until PR#1238 has a resolution
+  #tesseract:
+  #  type: git
+  #  url: https://github.com/tesseract-robotics/tesseract.git
+  #  version: 0.33.1
   tesseract:
     type: git
-    url: https://github.com/tesseract-robotics/tesseract.git
-    version: 0.33.0
+    url: https://github.com/jdham-iastate/tesseract.git
+    version: jdham-patch-24
   trajopt:
     type: git
     url: https://github.com/tesseract-robotics/trajopt.git
-    version: 0.33.0
+    version: b6b01df828ec5008f7167c4461d85a5b116beb26
   tesseract_planning:
     type: git
     url: https://github.com/tesseract-robotics/tesseract_planning.git
-    version: 0.33.0
+    version: 39b3e531cfa76209f0bb3f83fa40fdd3909ed385
   tesseract_qt:
     type: git
     url: https://github.com/tesseract-robotics/tesseract_qt.git
-    version: 0.33.0
+    version: c317ebde298d6765fd172c7ddf188597e061e857
   descartes_light:
     type: git
     url: https://github.com/swri-robotics/descartes_light.git
